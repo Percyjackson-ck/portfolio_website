@@ -33,7 +33,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Designer","Youtuber","Developer"],
+  strings : ["Developer","Designer"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
@@ -115,3 +115,25 @@ sections.forEach(current =>{
 }
 
 window.addEventListener('scroll', scrollActive)
+
+
+
+const themeSwitch = document.getElementById("theme-switch");
+const root = document.documentElement;
+
+// Default mode is dark
+themeSwitch.checked = true;
+root.classList.add("dark-mode");
+
+// Toggle theme on checkbox change
+themeSwitch.addEventListener("change", () => {
+    if (themeSwitch.checked) {
+        root.classList.add("dark-mode");
+        root.classList.remove("light-mode");
+    } else {
+        root.classList.add("light-mode");
+        root.classList.remove("dark-mode");
+    }
+});
+
+
